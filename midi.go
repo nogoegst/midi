@@ -4,7 +4,6 @@
 // and related or neighboring rights to this module of midi, using the creative
 // commons "CC0" public domain dedication. See LICENSE or
 // <http://creativecommons.org/publicdomain/zero/1.0/> for full details.
-// +build openbsd
 
 package midi
 
