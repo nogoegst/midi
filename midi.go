@@ -1,9 +1,10 @@
-// midi.go - midi interface for OpenBSD midi(4)
+// midi.go - MIDI interface for OpenBSD midi(4)
 //
 // To the extent possible under law, Ivan Markin waived all copyright
 // and related or neighboring rights to this module of midi, using the creative
 // commons "CC0" public domain dedication. See LICENSE or
 // <http://creativecommons.org/publicdomain/zero/1.0/> for full details.
+// +build openbsd
 
 package midi
 
@@ -31,14 +32,6 @@ func OpenDevice(name string) (*Device, error) {
 		f: f,
 	}
 	return device, nil
-}
-
-// Event represents MIDI event.
-type Event struct {
-	Status    byte
-	Data1     int8
-	Data2     int8
-	Timestamp time.Time
 }
 
 func parseEvents(p []byte) (events []Event, err error) {
